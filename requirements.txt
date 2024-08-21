@@ -7,3 +7,6 @@ simpy
 streamlit
 fastapi
 uvicorn
+matplotlib
+simpy
+uvicorn
