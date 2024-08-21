@@ -10,24 +10,22 @@ import pandas as pd
 
 @dataclass
 class Constants:
-    
-    reorder_level: Optional[int] = 10
-    reorder_qty: Optional[int] = 20
-    purchase_cost: Optional[int] = 1000
-    selling_price: Optional[int] = 2000
-   
-    holding_cost_unit: Optional[int] = 2
-    ordering_cost: Optional[int] = 1
-    other_costs: Optional[int] = 4
-    lead_time_mean: Optional[int] = 53
-    lead_time_std: Optional[int] = 20
-    delivery_batches: Optional[int] = 1
-    daily_demand_mean: Optional[int] = 0.0813
-    daily_demand_std: Optional[int] = 12
-    review_period : Optional[int] = 1
-    backlog_cost_unit : Optional[int] = 3
-    safety_stock : Optional[int] = 0
-    balance : Optional[int] = 0
+    reorder_level: Optional[int] = field(default_factory=lambda: 10)
+    reorder_qty: Optional[int] = field(default_factory=lambda: 20)
+    purchase_cost: Optional[int] = field(default_factory=lambda: 1000)
+    selling_price: Optional[int] = field(default_factory=lambda: 2000)
+    holding_cost_unit: Optional[int] = field(default_factory=lambda: 2)
+    ordering_cost: Optional[int] = field(default_factory=lambda: 1)
+    other_costs: Optional[int] = field(default_factory=lambda: 4)
+    lead_time_mean: Optional[int] = field(default_factory=lambda: 53)
+    lead_time_std: Optional[int] = field(default_factory=lambda: 20)
+    delivery_batches: Optional[int] = field(default_factory=lambda: 1)
+    daily_demand_mean: Optional[float] = field(default_factory=lambda: 0.0813)
+    daily_demand_std: Optional[int] = field(default_factory=lambda: 12)
+    review_period: Optional[int] = field(default_factory=lambda: 1)
+    backlog_cost_unit: Optional[int] = field(default_factory=lambda: 3)
+    safety_stock: Optional[int] = field(default_factory=lambda: 0)
+    balance: Optional[int] = field(default_factory=lambda: 0)
     
 @dataclass
 class Variables:
